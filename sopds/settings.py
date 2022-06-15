@@ -86,19 +86,19 @@ WSGI_APPLICATION = 'sopds.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-#DATABASES = {    
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'sopds',
-#        'HOST': 'localhost',
-#        'USER': 'sopds',
-#        'PASSWORD' : 'sopds',
-#        'OPTIONS' : {
-#            'init_command': "SET default_storage_engine=MyISAM;\
-#                             SET sql_mode='';"
-#        }
-#    }             
-#}
+DATABASES = {    
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sopds',
+        'HOST': 'localhost',
+        'USER': 'sopds',
+        'PASSWORD' : 'sopds',
+        'OPTIONS' : {
+            'init_command': "SET default_storage_engine=MyISAM;\
+                             SET sql_mode='';"
+        }
+    }             
+}
 
 #DATABASES = {
 #    'default': {
@@ -111,12 +111,12 @@ WSGI_APPLICATION = 'sopds.wsgi.application'
 #    }
 #}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }         
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }         
+#}
 
 #### SOPDS DATABASE SETTINGS FINISH ####
 
@@ -156,8 +156,12 @@ CACHE_MIDDLEWARE_KEY_PREFIX = "sopds"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
-
+# нечем отдавать статику не хочется в образ встраивать NGINX и пришлось все возложить на django
+#STATIC_ROOT = 'static'
+# вот это работает
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 
 CONSTANCE_ADDITIONAL_FIELDS = {
