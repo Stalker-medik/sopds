@@ -8,10 +8,18 @@
         </span>
        <div class="title-bar-title">
            <div class="show-for-small-only">SOPDS</div>
-           <div class="show-for-medium">SIMPLE OPDS CATALOG</div>
+           <div class="show-for-medium">Домашняя библиотека содержит:
+<span class="label">{{ stats.allbooks }}</span> {% trans "books," %} 
+<span class="label">{{ stats.allauthors }}</span> {% trans "authors," %} 
+<span class="label">{{ stats.allgenres }}</span> {% trans "genres and" %} 
+<span class="label">{{ stats.allseries }}</span> {% trans "series." %}
+           <p style="font-size:90%;">
+           <b>{% trans "Last collection scan date:" %}</b> 
+           <span class="label"> {% if stats.lastscan_date %}{{ stats.lastscan_date }}{% else %}{%  trans "Never" %}{% endif %}</span>
+           </p>
+      </div>
       </div>    
     </div>
-    
     <div class="top-bar-right">
         {% if sopds_auth %}
         <ul class="menu" style="font-size:90%;">
@@ -28,4 +36,3 @@
     </div>
 
 </div>
-
