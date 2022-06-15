@@ -4,22 +4,16 @@
 {% block ext-body %}
 <div class="row">
 <div class="small-12 medium-8 large-8 small-centered columns">
-<h3 style="text-align:center;">{% trans "Hello" %} {% if user.is_authenticated %}{{ user.get_full_name }}{% endif %}{% if not user.is_authenticated %}{% trans "Guest" %}{% endif %} !</h3>
-<img src="/static/images/homelib.jpg">
-   <p style="text-align:justify;">
-   <br>
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Это личная домашняя библиотека. Сделал это лично для себя, так как устал от "вечного хаоса" в библиотеке супруги. Здесь собраны книги и фанфики разных авторов, жанров. Доступ к библиотеке осуществляется из любой точки мира по протоколу <a href="https://ru.wikipedia.org/wiki/OPDS" target="_blank"> OPDS</a>, который понимают многие "читалки".
-   <br>
-   </p>
-<div class="title-bar-title">
+<h3 style="text-align:center;">{% trans "Hello" %} {% if user.is_authenticated %}{{ user.get_full_name }}{% endif %}{% if not user.is_authenticated %}{% trans "Guest" %}{% endif %} ! <img src="/static/images/homelib.jpg"></h3>
+<p style="text-align:justify;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Это личная домашняя библиотека. Сделал это лично для себя, так как устал от "вечного хаоса" в библиотеке супруги. Здесь собраны книги и фанфики разных авторов, жанров. Доступ к библиотеке осуществляется из любой точки мира по протоколу <a href="https://ru.wikipedia.org/wiki/OPDS" target="_blank"> OPDS</a>, который понимают многие "читалки".<br>
+<div class="title-bar-title columns">
 Внимание! Книги <font color="red"> не доступны</font> для свободного скачивания! Только через авторизацию.
-</div>
-   <br>
-   <br>
-   <b>Техническая информация:</b>
-   <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Эта библиотека реализована с помощью OPDS-каталога книг Simple OPDS. Информацию о программе и её настройке Вы сможете найти на Web-сайте проекта: <a href="http://www.sopds.ru/" target="_blank"> www.sopds.ru</a>. Развернуто это всё на домашнем
-<a href="https://ru.wikipedia.org/wiki/LAMP" target="_blank">LAMP</a> сервере. В качестве БД используется <a href="https://ru.wikipedia.org/wiki/MySQL" target="_blank">MySQL</a>.
+</div><br><br>
+<b>Техническая информация:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Эта библиотека реализована с помощью OPDS-каталога книг Simple OPDS.
+Информацию о программе и её настройке Вы сможете найти на Web-сайте проекта: <a href="http://www.sopds.ru/" target="_blank"> www.sopds.ru</a>.
+Развернуто это всё на домашнем <a href="https://ru.wikipedia.org/wiki/LAMP" target="_blank">LAMP</a> сервере. В качестве БД используется <a href="https://ru.wikipedia.org/wiki/MySQL" target="_blank">MySQL</a>.
 </p>
 </div>
 </div>
